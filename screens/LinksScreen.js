@@ -185,6 +185,19 @@ export default class LinksScreen extends Component {
               <Text style={this.styles.symptomsText}>{'\u2022'} fever</Text>
               <Text style={this.styles.symptomsText}>{'\u2022'} difficulty breathing</Text>
               <Text style={this.styles.symptomsText}>{'\u2022'} pneumonia in both lungs</Text>
+
+
+              
+              <RectButton style={[this.styles.option, false && this.styles.lastOption]} onPress={ () => WebBrowser.openBrowserAsync('https://ca.thrive.health/covid19/en')}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={this.styles.optionIconContainer}>
+                  <Ionicons name={"md-clipboard"} size={22} color="rgba(0,0,0,0.35)" />
+                </View>
+                <View style={this.styles.optionTextContainer}>
+                  <Text style={this.styles.myLink}>{ "Take a self-assessment"}</Text>
+                </View>
+              </View>
+            </RectButton>
             </View>
 
           {/* <View style={this.styles.getStartedContainer}> */}
@@ -201,7 +214,7 @@ export default class LinksScreen extends Component {
               <MonoText style={this.styles.myContainer}>Recoveries: {this.state.recovered}</MonoText>
             </View>     
 
-            <RectButton style={[this.styles.option, false && this.styles.lastOption]} onPress={ () => WebBrowser.openBrowserAsync('https://docs.expo.io')}>
+            <RectButton style={[this.styles.option, false && this.styles.lastOption]} onPress={ () => WebBrowser.openBrowserAsync('https://www.mayoclinic.org/diseases-conditions/coronavirus/symptoms-causes/syc-20479963')}>
             <View style={{ flexDirection: 'row' }}>
               <View style={this.styles.optionIconContainer}>
                 <Ionicons name={"md-school"} size={22} color="rgba(0,0,0,0.35)" />
@@ -223,7 +236,7 @@ export default class LinksScreen extends Component {
             </View>
           </RectButton>
 
-          <RectButton style={[this.styles.option, false && this.styles.lastOption]} onPress={ () => WebBrowser.openBrowserAsync('https://docs.expo.io')}>
+          <RectButton style={[this.styles.option, false && this.styles.lastOption]}>
             <View style={{ flexDirection: 'row' }}>
               <View style={this.styles.optionIconContainer}>
                 <Ionicons name={"ios-chatboxes"} size={22} color="rgba(0,0,0,0.35)" />
