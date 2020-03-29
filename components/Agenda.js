@@ -12,9 +12,23 @@ export default class AgendaComponent extends Component {
     };
   }
 
+  styles = StyleSheet.create({
+    container: {
+      marginBottom: 100
+    },
+  });
+  
+
   render() {
     return (
-      <Agenda
+        <Agenda
+          // theme={{
+          //   'stylesheet.agenda.main':{
+          //     'knobContainer': {
+          //       bottom: 150
+          //     }
+          //   }}}
+        // style={{ height: 300 }}
         items={this.state.items}
         loadItemsForMonth={this.loadItems.bind(this)}
         selected={'2020-03-27'}
@@ -32,7 +46,12 @@ export default class AgendaComponent extends Component {
         //    '2017-05-25': {color: 'gray'},
         //    '2017-05-26': {endingDay: true, color: 'gray'}}}
         // monthFormat={'yyyy'}
-        // theme={{calendarBackground: 'red', agendaKnobColor: 'green'}}
+        theme={{agendaKnobColor: '#7289da', 
+          backgroundColor : "#f5f6fa",
+          agendaTodayColor: '#7289da', 
+          dotColor : '#72dabd', 
+          todayTextColor : '#7289da', 
+          selectedDayBackgroundColor: '#7289da' }}
         //renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
         // hideExtraDays={false}
       />
@@ -41,6 +60,7 @@ export default class AgendaComponent extends Component {
 
   loadItems(day) {
     setTimeout(() => {
+      let num = 0;
       for (let i = -15; i < 85; i++) {
         const time = day.timestamp + i * 24 * 60 * 60 * 1000;
         const strTime = this.timeToString(time);
@@ -48,8 +68,9 @@ export default class AgendaComponent extends Component {
           this.state.items[strTime] = [];
           const numItems = Math.floor(Math.random() * 5);
           for (let j = 0; j < numItems; j++) {
+            num = num + 1;
             this.state.items[strTime].push({
-              name: 'Item for ' + strTime + ' #' + j,
+              name: 'Item for ' + strTime + ' #' + j + ":\nPain: 8/10, Fever: 35c\nSymptoms: Severe dry cough, headache",
               height: Math.max(50, Math.floor(Math.random() * 150))
             });
           }
