@@ -84,11 +84,9 @@ export default function InsightsScreen() {
       <View style={styles.separatorComponent}>
         <Divider style={styles.separator} />
       </View>
-      <View  style={{alignItems: 'center', backgroundColor: '#ffc62b'}} >
-      <Tooltip backgroundColor={'orange'}height={150} width={200}popover={<MyText>
-If you are having difficulty breathing or experiencing other severe symptoms, call 911 immediately. Advise them of your symptoms and travel history.
-</MyText>}>
-      <View style={{ alignItems: 'center', flexDirection: 'row', backgroundColor: '#ffc62b'}}><Icon name='warning' /><MyText style={{ textAlign: 'center', border: 'none', backgroundColor: '#ffc62b', padding: 14}}>SEVERE SYMPTONS</MyText>
+      <View style={{ alignItems: 'center', backgroundColor: '#ffc62b'}}>
+      <Tooltip backgroundColor={'orange'} height={150} width={200}popover={<MyText>If you are having difficulty breathing or experiencing other severe symptoms, call 911 immediately. Advise them of your symptoms and travel history.</MyText>}>
+      <View style={{ alignItems: 'center', width: '100%', flexDirection: 'row', backgroundColor: '#ffc62b'}}><Icon name='warning' /><MyText style={{ textAlign: 'center', border: 'none', backgroundColor: '#ffc62b', padding: 14}}>SEVERE SYMPTONS</MyText>
       </View>
       </Tooltip>
       </View>
