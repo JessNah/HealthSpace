@@ -15,7 +15,7 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/HealthMateHands.gif')
+                ? require('../assets/images/HealthMateCat.gif')
                 : require('../assets/images/robot-prod.png')
             }
             style={styles.welcomeImage}

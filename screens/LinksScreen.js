@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { MonoText } from '../components/StyledText';
 import axios from "axios";
-
+import { WebView } from 'react-native-webview';
 
 
 export default class LinksScreen extends Component {
@@ -16,7 +16,12 @@ export default class LinksScreen extends Component {
                   recovered: "Loading...",
                   gcases: "Loading...",
                   gdeaths: "Loading...",
-                  grecovered: "Loading..."  };
+                  grecovered: "Loading...",
+                  isReady: false,
+                  status: null,
+                  quality: null,
+                  error: null,
+                };
   }
 
   async componentDidMount() {
@@ -143,12 +148,29 @@ export default class LinksScreen extends Component {
     symptoms: {
       marginTop: 10,
       paddingLeft: 20,
-      marginBottom: 20
+      marginBottom: 20,
+      paddingRight: 20
     },
     symptomsText: {
       fontSize: 14,
       paddingLeft: 15
-    }
+    },
+    youTContainer: {
+      padding:30,
+      backgroundColor: "#e1e5f5"
+    },
+    youTContainer2: {
+      paddingLeft:65,
+      paddingTop:10,
+      paddingBottom:20,
+      backgroundColor: "#e1e5f5"
+    }, 
+    bannerImg: {
+      flex: 1,
+      width: 350,
+      height: 60,
+      resizeMode: 'contain',
+    },
   });
     
 
@@ -156,7 +178,6 @@ export default class LinksScreen extends Component {
   render() {
     return (
       <ScrollView style={this.styles.container} contentContainerStyle={this.styles.contentContainer}>
-
           <View style={this.styles.symptoms}>
               <Text style={this.styles.myContainerBoldP}>Know the symptoms</Text>
               <Text>Symptoms have included:</Text>
@@ -212,8 +233,48 @@ export default class LinksScreen extends Component {
               </View>
             </View>
           </RectButton>
-            
-          {/* </View> */}
+
+
+        <View style={this.styles.youTContainer}>
+        <Text style={this.styles.myContainerBoldP}>Learn to wash your hands properly</Text>
+          <WebView
+            style={{flex:1, width:330, height:165}}
+            javaScriptEnabled={true}
+            source={{uri: 'https://www.youtube.com/embed/3SfHdSHK-g0?rel=0&autoplay=0&showinfo=0&controls=0'}}
+        />
+        </View>
+
+
+        <View style={this.styles.symptoms}>
+        <Text style={this.styles.myContainerBoldP}> </Text>
+              <Image 
+                source={ require('../assets/images/banner.jpg') }
+                style={this.styles.bannerImg}
+              />
+
+              <Text style={this.styles.symptomsText}>Get the latest information from the Public Health Agency of Canada about COVID-19.
+              </Text>
+          <RectButton style={[this.styles.option, false && this.styles.lastOption]} onPress={ () => WebBrowser.openBrowserAsync('https://docs.expo.io')}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={this.styles.optionIconContainer}>
+                <Ionicons name={"md-school"} size={22} color="rgba(0,0,0,0.35)" />
+              </View>
+              <View style={this.styles.optionTextContainer}>
+                <Text style={this.styles.myLink}>{ "PHAC"}</Text>
+              </View>
+            </View>
+          </RectButton>
+          </View>
+
+
+        <View style={this.styles.youTContainer2}>
+        <Text style={this.styles.myContainerBoldP}>The Coronavirus Explained</Text>
+          <WebView
+            style={{flex:1, width:260, height:170}}
+            javaScriptEnabled={true}
+            source={{uri: 'https://www.youtube.com/embed/BtN-goy9VOY?rel=0&autoplay=0&showinfo=0&controls=0'}}
+        />
+        </View>
 
       </ScrollView>
     );

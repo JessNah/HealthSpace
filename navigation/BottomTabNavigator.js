@@ -57,10 +57,25 @@ export default function BottomTabNavigator({ navigation, route }) {
 
 function getHeaderTitle(route) {
   const routeName = route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      width: 30,
+      height: 30,
+      maxWidth: 30,
+      maxHeight: 30,
+      marginRight: 20,
+      resizeMode: 'contain',
+    },
+  });
+  const img =  <Image 
+      source={ require('../assets/images/healthGlanceSm.png') }
+      style={styles.container}
+    />
 
   switch (routeName) {
     case 'Home':
-      return <Text style={{color: "#7289DA"}}>Health Glance</Text>;
+      return <><Text style={{color: "#7289DA"}}>Health Space</Text></>;
     case 'Links':
       return <Text style={{color: "#7289DA"}}>Keep yourself updated</Text>;
     case 'Agenda':
