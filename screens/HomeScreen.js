@@ -27,6 +27,7 @@ export default function HomeScreen() {
           {/* <DevelopmentModeNotice /> */}
 
           <Text style={styles.getStartedText}>How are you feeling today?</Text>
+          <Text style={styles.logText}>Log an entry on the My Records page to keep track of how you're doing.</Text>
 
           {/* <Text style={styles.myContainer2}>Canada:</Text> */}
           <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
@@ -163,6 +164,14 @@ const styles = StyleSheet.create({
     color: 'rgba(96,100,109, 1)',
     lineHeight: 24,
     textAlign: 'center',
+  },
+  logText: {
+    fontSize: 13,
+    color: 'rgba(96,100,109, 0.6)',
+    lineHeight: 17,
+    textAlign: 'center',
+    paddingTop:8,
+    marginBottom:-6
   },
   tabBarInfoContainer: {
     position: 'absolute',
