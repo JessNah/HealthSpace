@@ -60,6 +60,7 @@ export default class AgendaComponent extends Component {
 
   loadItems(day) {
     setTimeout(() => {
+      let strings =[":\nPain: 8/10, Fever: 38c\nSymptoms: dry cough, headache", ":\nPain: 4/10, Fever: 37c\nSymptoms: No Symtoms", ":\nPain: 9/10, Fever: 39c\nSymptoms: Severe dry cough, headache, diarrhea",]
       let num = 0;
       for (let i = -15; i < 85; i++) {
         const time = day.timestamp + i * 24 * 60 * 60 * 1000;
@@ -70,8 +71,8 @@ export default class AgendaComponent extends Component {
           for (let j = 0; j < numItems; j++) {
             num = num + 1;
             this.state.items[strTime].push({
-              name: 'Item for ' + strTime + ' #' + j + ":\nPain: 8/10, Fever: 35c\nSymptoms: Severe dry cough, headache",
-              height: Math.max(50, Math.floor(Math.random() * 150))
+              name: 'Item for ' + strTime + ' #' + j + strings[(Math.floor(Math.random() * 3))],
+              height: Math.max(60, Math.floor(Math.random() * 150)) 
             });
           }
         }
