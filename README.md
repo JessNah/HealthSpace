@@ -4,6 +4,8 @@ Monitor and stay on top of your symptoms, get insights into how your symptoms ar
 
 Health Space was created during the Corona Virus panic of 2020, in hopes of helping the population mitigate some of its adverse impacts.
 
+[![Click to view youtube video](assets/images/splash.png)](https://youtu.be/cmO3B6kJ5cY)
+
 
 ## Inspiration
 We've heard stories of so many people in our lives who have been having fevers, or headaches, or even a slightly sore throat, and the first fear that comes to their minds is "what if they have the virus". People are too scared to even tell their doctor that they have a sore throat, and people don't know what medication to take or how long these symptoms might last.
