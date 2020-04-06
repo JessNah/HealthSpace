@@ -3,8 +3,7 @@
 Monitor and stay on top of your symptoms, get insights into how your symptoms are progressing, and get the latest health advice. Take care of yourself the best way you can.
 
 Health Space was created during the Corona Virus panic of 2020, in hopes of helping the population mitigate some of its adverse impacts.
-
-[![Click to view youtube video](assets/images/splash.png)](https://youtu.be/cmO3B6kJ5cY)
+<!-- [![Click to view youtube video](assets/images/splash.png)](https://youtu.be/cmO3B6kJ5cY) -->
 
 
 ## Inspiration
